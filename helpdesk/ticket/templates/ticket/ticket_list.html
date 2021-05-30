@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<table>
+    <thead>
+        <tr>
+        <th>ticket_code</th>
+        <th>category</th>
+        <th>issue</th>
+        <th>priority</th>
+        <th>email</th>
+        <th>area</th>
+        <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ticket in ticket_list %}
+        <tr>
+        <td>{{ticket.ticket_code}}</td>
+        <td>{{ticket.category}}</td>
+        <td>{{ticket.issue}}</td>
+        <td>{{ticket.priority}}</td>
+        <td>{{ticket.email}}</td>
+        <td>{{ticket.area}}</td>
+        <td><img src="{{ MEDIA_URL }}/{{ticket.image}}"></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+{% endblock %}

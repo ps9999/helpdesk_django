@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<style type="text/css">
+    body {
+      color: #aa082e;
+      {% comment %} #background-color: #b6bde7; {% endcomment %}
+      font-family: 'Roboto', sans-serif;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    .note {
+      text-align: center;
+      height: 80px;
+      background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+      color: #fff;
+      font-weight: bold;
+      line-height: 80px;
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 1px solid #ced4da;
+      margin-bottom: 2%;
+    }
+
+    .form-control {
+      border-radius: 1.5rem;
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+    }
+  </style>
+
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container register-form">
+      <div class="form">
+        <div class="note">
+          <p>Create New Ticket</p>
+        </div>
+
+        <div class="form-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label"> Ticket Code </label>
+                
+                {% render_field form.ticket_code class="form-control" placeholder="Ticket Code" %}
+              </div>
+              </div>
+              <div class="col-md-6">
+               <div class="form-group">
+               <label class="control-label"> Email Id </label><br>
+               
+                {% render_field form.email class="form-control" placeholder="Email" %}
+             
+              </div> 
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label"> Email on Update </label>
+                
+                {% render_field form.email_on_update class="form-control" %}
+              </div>
+              </div>
+              <div class="col-md-6">
+               <div class="form-group">
+               <label class="control-label"> Email on Closure </label><br>
+               
+                {% render_field form.email_on_closure class="form-control"  %}
+             
+              </div> 
+            </div>
+            </div>
+            <div class="row">
+             <div class="col-md-6">
+              <div class="form-group">
+              <label class="control-label"> Issue </label><br>
+                {% render_field form.issue class="form-control" placeholder="Issue" %}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+              <label class="control-label"> Ticket Status </label><br>
+                {% render_field form.ticket_status class="form-control" placeholder="Issue" %}
+              </div>
+            </div>
+            </div> 
+     
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label"> Category </label><br>
+                {% render_field form.category class="form-control" %}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+              <label class="control-label"> Priority </label><br>
+                {% render_field form.priority class="form-control" %}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+              <label class="control-label"> Area </label><br>
+                {% render_field form.area class="form-control" placeholder="Area" %}
+              </div>
+               
+            </div> 
+            <div class="col-md-12">
+              <div class="form-group">
+              <label class="control-label"> Description </label><br>
+                {% render_field form.description class="form-control" placeholder="Description" %}
+              </div>
+              </div>
+              <div class="col-md-12">
+               <div class="form-group">
+               <label class="control-label"> Corrective Action </label><br>
+                {% render_field form.corrective_action class="form-control" placeholder="Corrective Action" %}
+              </div>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+              <label class="control-label"> Preventive Action </label><br>
+                {% render_field form.preventive_action class="form-control" placeholder="Preventive Action" %}
+              </div>
+              </div>
+              <div class="col-md-12">
+               <div class="form-group">
+               <label class="control-label"> RCA Description </label><br>
+                {% render_field form.rca_desc class="form-control" placeholder="RCA Description" %}
+              </div>
+            </div> 
+            <div class="col-md-6">
+              <div class="form-group">
+              <label class="control-label"> Image Description </label><br>
+                {% render_field form.image_description class="form-control" placeholder="Image Description" %}
+              </div>
+              </div>
+              <div class="col-md-6">
+               <div class="form-group">
+               <label class="control-label"> Add Image Attachment </label><br>
+                {% render_field form.image %}
+              </div>
+            </div> 
+        </div>
+             
+           <div style="height:20px;"></div>   
+          <div style="text-align:center;">
+          <button type="submit" class="btnSubmit">Submit</button>
+          </div>
+          
+           
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+  </form>>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
